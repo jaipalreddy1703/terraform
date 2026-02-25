@@ -47,3 +47,9 @@ syntax:
 variable "name_of_variable"{
     default = " "
 }
+
+
+===============================
+conditions:
+
+expression ? "true-value" : "false-value"
