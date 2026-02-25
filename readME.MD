@@ -49,7 +49,16 @@ variable "name_of_variable"{
 }
 
 
-===============================
-conditions:
+var precedence: high to low
+============================
+1. command line (terraform plan -var="sg_name=allow-all-terraform-cmd")
+2. terraform.tfvars
+3. env variables ( set TF_VAR_sg_name = "from-env")
+4. default values inside variables.tf 
 
+
+
+
+conditions:
+==================
 expression ? "true-value" : "false-value"
