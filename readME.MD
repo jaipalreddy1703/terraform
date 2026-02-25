@@ -57,8 +57,24 @@ var precedence: high to low
 4. default values inside variables.tf 
 
 
-
-
 conditions:
 ==================
 expression ? "true-value" : "false-value"
+
+
+loops:
+=============
+1. count based
+    count = number
+    count.index
+
+
+2. for each 
+3. dynamic 
+
+
+output "name of the output" value
+=====================================
+
+
+
