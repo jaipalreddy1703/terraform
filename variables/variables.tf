@@ -40,7 +40,7 @@ variable "sg_from_port" {
 
 variable "cidr_blocks" {
     type = list 
-    default = ["0.0.0./0"]
+    default = ["0.0.0.0/0"]
   
 }
 
