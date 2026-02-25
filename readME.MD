@@ -35,8 +35,15 @@ key = value eg: ami = ami id here
 terraform was built on GO language.
 
 ========================================
-
 terraform init
 terraform plan
 terraform apply 
+===========================
 
+variables:
+
+syntax: 
+
+variable "name_of_variable"{
+    default = " "
+}
