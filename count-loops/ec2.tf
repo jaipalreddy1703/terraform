@@ -5,7 +5,7 @@ resource "aws_instance" "example" {
     vpc_security_group_ids = [ aws_security_group.allow_tls.id ]
 
     tags = {
-      Name = var.instance[count.index]  # will get the names thru variable instances
+      Name = var.instances[count.index]  # will get the names thru variable instances
       Project = "roboshop-dev"
     }
 }
