@@ -65,11 +65,14 @@ expression ? "true-value" : "false-value"
 loops:
 =============
 1. count based
+    works for LIST (duplicates allowed and preserve the order)
     count = number
     count.index
 
 
 2. for each 
+    works for SET (removes any dupicate values)
+
 3. dynamic 
 
 

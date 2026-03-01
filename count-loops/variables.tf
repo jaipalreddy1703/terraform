@@ -10,3 +10,14 @@ variable "zone_id" {
 variable "domain_name" {
     default = "vakiti.online"
 }
+
+variable "frutis" {
+    type = list(string)
+    default = ["apple","banana","orange","apple","banana"]
+}
+
+variable "fruits_set" {
+    type = set(string)
+    default = ["apple","banana","orange","apple","banana"]  
+  
+}

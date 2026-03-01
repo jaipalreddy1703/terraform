@@ -4,3 +4,12 @@ output "roboshop_instances" {
     description = "description"
   
 }
+
+
+output "frutis_names" {
+  value = var.frutis
+}
+
+output "frutis_set" {
+  value = var.fruits_set
+}
