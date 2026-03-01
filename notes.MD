@@ -96,3 +96,39 @@ Data Source:
 =============
 if you want to get the information from the provider, we can use data sources.
 it is useful when you want to query the information from provider.
+
+
+Functions:
+==========
+we can not write your own custom functions in terraform.
+we only use the built in functions. but if you want, you have to write your own provider 
+eg:
+max(1,3,99,4)
+min(1,4,19)
+upper("jai")
+lower("JAI")
+endswith("hello","o") -> true 
+substr("hello, world", 6, 10)
+file(path) -> reads the content 
+length(list) -> gives the length of a list 
+
+merge:
+
+{
+    a="b"
+    c="d"
+}
+
+{
+    c="new"
+    d="e"
+}
+
+if we merge these:
+
+{
+    a="b"
+    c="new"  # updating the value
+    d="e"
+}
+

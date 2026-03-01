@@ -1,19 +1,15 @@
 resource "aws_instance" "example" {
-    count = length(var.instances) #length of the variable "instances"
 
     ami = "ami-0220d79f3f480ecf5"
     instance_type = "t3.micro"
     vpc_security_group_ids = [ aws_security_group.allow_tls.id ]
 
-    tags = {
-      Name = var.instances[count.index]  # will get the names thru variable instances
-      Project = "roboshop-dev"
-    }
+    tags = merge(var.common-tags, var.ec2-tags) #merge function 
 }
 
 resource "aws_security_group" "allow_tls" {
 
-    name = "allow-all-roboshop"
+    name = "allow-all-terraform"
     description = "Allow TLS inbound traffic and all outbound traffic"
 
     egress {
@@ -32,8 +28,6 @@ resource "aws_security_group" "allow_tls" {
         ipv6_cidr_blocks = [ "::/0" ]       
     }
 
-    tags = {
-      Name = "allow-all-terraform"
-    }
+    tags = merge(var.common-tags, var.sg-tags)  #merge function 
   
 }
