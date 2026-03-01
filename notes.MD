@@ -82,11 +82,23 @@ loops:
     toset(list) --> will convert list to set
 
 
-3. dynamic 
+3. dynamic: only for repeated code inside resource
 
 
 output "name of the output" value
-=====================================
+==================================
+eg:
+output "ec2_output" {
+    value = aws_instance.example
+}
+
+
+Data Source:
+=============
+
+
+
+
 
 
 
