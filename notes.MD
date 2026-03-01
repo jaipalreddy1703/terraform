@@ -95,7 +95,7 @@ output "ec2_output" {
 
 Data Source:
 =============
-
+if you want to get the information from the provider, we can use data sources.
 
 
 
