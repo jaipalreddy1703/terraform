@@ -92,13 +92,7 @@ output "ec2_output" {
     value = aws_instance.example
 }
 
-
 Data Source:
 =============
 if you want to get the information from the provider, we can use data sources.
-
-
-
-
-
-
+it is useful when you want to query the information from provider.
