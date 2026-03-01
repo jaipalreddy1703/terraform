@@ -35,9 +35,10 @@ key = value eg: ami = ami id here
 terraform was built on GO language.
 
 ========================================
-terraform init
-terraform plan
-terraform apply 
+terraform init - downloads the provider
+terraform plan - plan the infra but it will not create
+terraform apply - create the infra
+terraform destroy - destroys the infra
 ===========================
 
 variables:
@@ -56,6 +57,10 @@ var precedence: high to low
 3. env variables ( set TF_VAR_sg_name = "from-env")
 4. default values inside variables.tf 
 
+Data types:
+============
+string, set, list,  number..
+
 
 conditions:
 ==================
@@ -71,7 +76,11 @@ loops:
 
 
 2. for each 
-    works for SET (removes any dupicate values)
+    works for SET/MAP
+    (removes any dupicate values, order not gauranteed)
+
+    toset(list) --> will convert list to set
+
 
 3. dynamic 
 
