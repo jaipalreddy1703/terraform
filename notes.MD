@@ -136,3 +136,59 @@ if we merge these:
 
 State:
 ========
+terraform stores/tracks what it had created in the state file, it is like memory to terrform
+
+.tf files --> descired/declated/expected/asked infra
+actual infra --> what is actually created inside provider
+state --> what terraform created 
+
+desired infra--> actual infra 
+
+
+when we run terrform init for the first time:
+===========================================
+declare infra
+actual infra not created
+state is empty
+
+terraform apply: 
+terraform creates the resources in provider and note them in state file.
+
+apply again:
+.tf files, state file, actual file 
+state file == actual infra
+
+scan .tf files
+.tf files == actual infra 
+
+udpate tf files:
+===============
+apply..
+.tf files, actual infra, state file - scan them all
+
+state file == actual infra --> means nothing changed outside of terraform
+
+.tf files != actual infra --> terraform will update based on tf file updates
+
+if someone changes directly in AWS ui instead of terraform
+==========================================================
+apply..
+
+state file != actual infra --> means someone changed outside of terraform
+
+desired != actual infra 
+
+destroy:
+=========
+
+delete the infra, update state file
+
+state file is for terraform use
+tf files are used by us
+
+state file is locked by terraform when it is performing actions on it
+
+remote state file:
+==================
+In Colloboration environments, state file should be stored in remote location like S3, so that we can prevent 
+errors and duplicates. it should be locked so parellel modifications should not9 be allowed.
