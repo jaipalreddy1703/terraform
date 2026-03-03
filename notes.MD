@@ -205,3 +205,19 @@ locals:
 1. locals are like variables but have extra capabilities 
 2. locals can not be overridden
 3. we can store functions and expressions also in locals
+
+provisioners:**
+=============
+1. local-exec --> where terraform executes
+eg:
+    provisioner "local-exec" {
+        command = "echo ${self.public_ip} > inventory.ini"   # creates the inventory.ini file with public ip
+      
+    }
+
+
+2. remote-exec --> executes inside the resources created by the terraform 
+
+if we want to perform some actions or to run some scripts then we can use provisioners 
+provisioneres will be executed at the time of creation or destory but not at the time of updating the resources.
+provisioners are useful to create the ansible playbooks.
