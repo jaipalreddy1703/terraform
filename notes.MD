@@ -192,3 +192,16 @@ remote state file:
 ==================
 In Colloboration environments, state file should be stored in remote location like S3, so that we can prevent 
 errors and duplicates. it should be locked so parellel modifications should not9 be allowed.
+
+
+remote state secure:
+===================
+1. users should not have access to delete except terraform
+2. you should enable versioning 
+3. data replication in another bucket (backup)
+
+locals:
+==========
+1. locals are like variables but have extra capabilities 
+2. locals can not be overridden
+3. we can store functions and expressions also in locals
